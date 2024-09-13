@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="IMC.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout
+            Padding="30,0"
+            Spacing="25">
+            <Image
+                Source="imc.png"
+                HeightRequest="185"
+                Aspect="AspectFit"
+                SemanticProperties.Description="imagem de uma lousa explicando o calculo do IMC" />
+
+            <Label
+                Text="Calcule seu IMC!"
+                Style="{StaticResource Headline}"
+                SemanticProperties.HeadingLevel="Level1" />
+
+            <HorizontalStackLayout>
+                <Label
+                    Text="Digite seu peso"
+                    Style="{StaticResource SubHeadline}"
+                    VerticalOptions="Center" />
+
+                <Entry
+                    x:Name="pesoEntry"
+                    Placeholder="Peso (kg)"
+                    Keyboard="Numeric"
+                    WidthRequest="100"
+                    HorizontalOptions="StartAndExpand"/>
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout>
+                <Label
+                    Text="Digite sua altura em centímetros"
+                    Style="{StaticResource SubHeadline}"
+                    VerticalOptions="Center" />
+
+                <Entry
+                    x:Name="alturaEntry"
+                    Placeholder="Altura (cm)"
+                    Keyboard="Numeric"
+                    WidthRequest="100"
+                    HorizontalOptions="StartAndExpand"/>
+            </HorizontalStackLayout>
+
+            <Button
+                x:Name="calcularIMCButton"
+                Text="Calcular IMC"
+                Clicked="Button_Clicked"
+                HorizontalOptions="Fill" />
+
+            <!-- Resultado do IMC -->
+            <Label
+                x:Name="resultadoLabel"
+                Text="Seu IMC aparecerá aqui"
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level2" />
+            <Label
+                x:Name="diagnosticoLabel"
+                Text="Seu status de IMC aparecerá aqui"
+                Style="{StaticResource SubHeadline}"
+                SemanticProperties.HeadingLevel="Level2" />
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
